@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\FCA.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\LoginPage.css",
+      "PackagePath": "staticwebassets\\css\\LoginPage.css"
+    },
+    {
+      "Id": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\WelcomePage.css",
+      "PackagePath": "staticwebassets\\css\\WelcomePage.css"
+    },
+    {
       "Id": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

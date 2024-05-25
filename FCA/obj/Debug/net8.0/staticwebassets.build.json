@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RqIz67K/4Ek0ndvtNtfs0Rbn5g/SoSaFl0WDlKY2+Fc=",
+  "Hash": "kWEPoz/iI8hspyRl8KkxqdHw5YTsFbHEr0kYfPC/tBI=",
   "Source": "FCA",
   "BasePath": "_content/FCA",
   "Mode": "Default",
@@ -1195,6 +1195,25 @@
       "OriginalItemSpec": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FCA.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\LoginPage.css",
+      "SourceId": "FCA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\",
+      "BasePath": "_content/FCA",
+      "RelativePath": "css/LoginPage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\LoginPage.css"
+    },
+    {
       "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\site.css",
       "SourceId": "FCA",
       "SourceType": "Discovered",
@@ -1212,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\WelcomePage.css",
+      "SourceId": "FCA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\",
+      "BasePath": "_content/FCA",
+      "RelativePath": "css/WelcomePage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\WelcomePage.css"
     },
     {
       "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\favicon.ico",

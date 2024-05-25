@@ -31,4 +31,10 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
+
+app.MapGet("/", async context =>
+{
+    context.Response.Redirect("/Welcome");
+});
+
 app.Run();

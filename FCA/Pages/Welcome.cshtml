@@ -1,0 +1,59 @@
+﻿@page
+@model MyApp.Namespace.WelcomeModel
+@{
+    ViewData["Title"] = "Welcome page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <title>Fitness Challenge App - Welcome</title>
+    <!-- Additional CSS File -->
+    <link rel="stylesheet" href="~/css/WelcomePage.css">
+</head>
+
+<body>
+    <!-- Header Area -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <ul class="nav"">
+                          <div class=" main-button">
+                            <a href="/Identity/Account/Login">Login</a>
+                          </div>
+                          <div class=" secondary-button">
+                           <a href="/Identity/Account/Register">Register</a>
+                          </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Banner Area -->
+    <div class="main-banner" id="top">
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6>work harder, get stronger</h6>
+                <h2>better with our <em>app</em></h2>
+                <div class="main-button">
+                    <a href="/Identity/Account/Register">Join Us Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Area -->
+</body>
+
+</html>

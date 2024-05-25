@@ -1,4 +1,7 @@
-a[b-fwodw9l2f9] {
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+
+a {
     text-decoration: none !important;
     color: #fff;  /* Link rengini beyaz yaptık */
 }
@@ -7,7 +10,7 @@ a[b-fwodw9l2f9] {
 header
 --------------------------------------------- 
 */
-.header-area[b-fwodw9l2f9] {
+.header-area {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -21,12 +24,12 @@ header
     transition: all .5s ease 0s;
 }
 
-.header-area .main-nav[b-fwodw9l2f9] {
+.header-area .main-nav {
     min-height: 80px;
     background: transparent;
 }
 
-.header-area .main-nav .logo[b-fwodw9l2f9] {
+.header-area .main-nav .logo {
     line-height: 80px;
     color: #fff;
     font-size: 32px;
@@ -39,7 +42,7 @@ header
     transition: all 0.3s ease 0s;
 }
 
-.logo em[b-fwodw9l2f9] {
+.logo em {
     font-style: normal;
     color: #ed563b;
     font-weight: 900;
@@ -51,7 +54,7 @@ header
 footer
 --------------------------------------------- 
 */
-.footer1[b-fwodw9l2f9] {
+.footer1 {
     position: absolute;
     bottom: 0;
     width: 100%;

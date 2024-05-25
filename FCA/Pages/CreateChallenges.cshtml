@@ -1,0 +1,102 @@
+﻿@page 
+@model FCA.Pages.CreateChallengesModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Challenge</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="img js-fullheight"
+    style="background-image: url('https://bilimgenc.tubitak.gov.tr/sites/default/files/etkileyici_doga_fotograflari_4.jpg'); background-size: cover; background-repeat: no-repeat;background-attachment: fixed;">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h1 class="heading-section" style="color:white">Add Challenge</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center" style="color:white">Do you want to add a Challenge?</h3>
+                        <form class="requires-validation" method="post" novalidate>
+                            <div class="col-md-12">
+                                <select class="form-control" style="opacity:0.6;border-radius:15px; height:50px"
+                                    name="ChallengeResult.Category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Step">Step</option>
+                                    <option value="Squad">Squad</option>
+                                    <option value="Cardio">Cardio</option>
+                                    <option value="Weight Loss">Weight Loss</option>
+                                    <!-- Kendi seçeceğiniz 3 spor kategorisi -->
+                                    <option value="Yoga">Yoga</option>
+                                    <option value="CrossFit">CrossFit</option>
+                                    <option value="Running">Running</option>
+                                </select> <br>
+                                <div class="valid-feedback">Category field is valid!</div>
+                                <div class="invalid-feedback">Please select a category!</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="number" min="1" max="7"
+                                    style="opacity:0.6;border-radius:15px; height:50px" name="ChallengeResult.Period"
+                                    placeholder="Period (1-7)" required> <br>
+                                <div class="valid-feedback">Period field is valid!</div>
+                                <div class="invalid-feedback">Please enter a period between 1 and 7!</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <select class="form-control" style="opacity:0.6;border-radius:15px; height:50px"
+                                    name="ChallengeResult.DifLevel" required>
+                                    <option value="">Select Difficulty Level</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select> <br>
+                                <div class="valid-feedback">Difficulty Level field is valid!</div>
+                                <div class="invalid-feedback">Please select a difficulty level!</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" style="opacity:0.6;border-radius:15px;"
+                                    name="ChallengeResult.Instruction" placeholder="Instruction" required></textarea>
+                                <br>
+                                <div class="valid-feedback">Instruction field is valid!</div>
+                                <div class="invalid-feedback">Instruction field cannot be blank!</div>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label">Data is Correct</label>
+                                <div class="invalid-feedback">Please confirm that the entered data are all correct!
+                                </div>
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary"
+                                    style="background-color:green; color:black">Add Challenge</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387"
+        integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ=="
+        data-cf-beacon='{"rayId":"883352afb86170ce","version":"2024.4.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vCJLnSjcznL9ZulubrTc6pxagMe1kUwIsPzzz+kgcbY=",
+  "Hash": "WQpxjjdlBtnL4Ix6V0fhWMTUU4lefolfTiRUrtawTAE=",
   "Source": "FCA",
   "BasePath": "_content/FCA",
   "Mode": "Default",
@@ -1271,6 +1271,25 @@
       "OriginalItemSpec": "wwwroot\\css\\LoginPage.css"
     },
     {
+      "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\Profile.css",
+      "SourceId": "FCA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\",
+      "BasePath": "_content/FCA",
+      "RelativePath": "css/Profile.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Profile.css"
+    },
+    {
       "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\site.css",
       "SourceId": "FCA",
       "SourceType": "Discovered",
@@ -1288,6 +1307,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\ViewLeaderBoard.css",
+      "SourceId": "FCA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\",
+      "BasePath": "_content/FCA",
+      "RelativePath": "css/ViewLeaderBoard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ViewLeaderBoard.css"
     },
     {
       "Identity": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\WelcomePage.css",

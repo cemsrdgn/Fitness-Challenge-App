@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\css\\LoginPage.css"
     },
     {
+      "Id": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Profile.css"
+    },
+    {
+      "Id": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\ViewLeaderBoard.css",
+      "PackagePath": "staticwebassets\\css\\ViewLeaderBoard.css"
+    },
+    {
       "Id": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\wwwroot\\css\\WelcomePage.css",
       "PackagePath": "staticwebassets\\css\\WelcomePage.css"
     },

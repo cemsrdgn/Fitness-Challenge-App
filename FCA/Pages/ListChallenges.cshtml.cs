@@ -28,6 +28,7 @@ namespace FCA.Pages
 
         public async Task<IActionResult> OnGet(string? category, string? period, string? difLevel, string? sortBy)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Oturum açmış kullanıcının kimliği
             var query = _context.Challenges.AsQueryable();
 
             if (!string.IsNullOrEmpty(category))
@@ -63,10 +64,8 @@ namespace FCA.Pages
                                           .Distinct()
                                           .ToListAsync();
 
-            // Bu kısım geçici kullanıcı verilerini yüklemek için örnek
-            var tempUserId = "tempUser"; // Geçici kullanıcı kimliği
             UserReviews = await _context.Reviews
-                                        .Where(r => r.UserId == tempUserId)
+                                        .Where(r => r.UserId == userId)
                                         .ToListAsync();
 
             return Page();
@@ -74,6 +73,7 @@ namespace FCA.Pages
 
         public async Task<IActionResult> OnPostToggleFavorite(int id)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Oturum açmış kullanıcının kimliği
             var challenge = await _context.Challenges.FindAsync(id);
             if (challenge == null)
             {
@@ -87,17 +87,17 @@ namespace FCA.Pages
 
         public async Task<IActionResult> OnPostAddReview(int challengeId, int rating, string comment)
         {
-            var tempUserId = "tempUser"; // Geçici kullanıcı kimliği
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Oturum açmış kullanıcının kimliği
 
             var review = await _context.Reviews
-                                       .FirstOrDefaultAsync(r => r.ChallengeId == challengeId && r.UserId == tempUserId);
+                                       .FirstOrDefaultAsync(r => r.ChallengeId == challengeId && r.UserId == userId);
 
             if (review == null)
             {
                 review = new Review
                 {
                     ChallengeId = challengeId,
-                    UserId = tempUserId,
+                    UserId = userId,
                     Rating = rating,
                     Comment = comment
                 };
@@ -116,6 +116,7 @@ namespace FCA.Pages
 
         public async Task<IActionResult> OnGetFilteredChallenges(string? category, string? period, string? difLevel)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Oturum açmış kullanıcının kimliği
             var query = _context.Challenges.AsQueryable();
 
             if (!string.IsNullOrEmpty(category))
@@ -139,10 +140,8 @@ namespace FCA.Pages
                                           .Distinct()
                                           .ToListAsync();
 
-            // Bu kısım geçici kullanıcı verilerini yüklemek için örnek
-            var tempUserId = "tempUser"; // Geçici kullanıcı kimliği
             UserReviews = await _context.Reviews
-                                        .Where(r => r.UserId == tempUserId)
+                                        .Where(r => r.UserId == userId)
                                         .ToListAsync();
 
             return Page();

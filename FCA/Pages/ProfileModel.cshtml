@@ -1,0 +1,33 @@
+﻿@page
+@model FCA.Pages.ProfileModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<link rel="stylesheet" href="~/css/Profile.css">
+
+<main role="main" class="container" style="margin-top: 130px;">
+    <div class="profile-header text-center">
+        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.2082370165.1716422400&semt=ais_user" class="profile-img" alt="Profile Picture">
+        <h1>@User.Identity.Name</h1>
+        <p class="short-bio">This is a short bio about the user. It gives a brief introduction about their fitness journey and goals.</p>
+    </div>
+    <div class="favorite-challenges">
+        <h2>Favorite Challenges</h2>
+        @if (Model.FavoriteChallenges != null && Model.FavoriteChallenges.Any())
+        {
+            <ul class="challenge-list">
+                @foreach (var challenge in Model.FavoriteChallenges)
+                {
+                    <li>
+                        <strong>@challenge.Category:</strong> @challenge.Instruction
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No favorite challenges added yet.</p>
+        }
+    </div>
+</main>

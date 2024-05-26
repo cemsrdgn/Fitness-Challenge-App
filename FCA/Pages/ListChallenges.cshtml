@@ -1,0 +1,136 @@
+﻿@page
+@model FCA.Pages.ListChallenges
+@{
+    ViewData["Title"] = "ListChallenges";
+}
+
+<link rel="stylesheet" href="../css/ListRoom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/font-awesome.min.css">
+<style>
+    /* Eklediğiniz CSS stilini buraya ekleyin */
+</style>
+
+<div class="panel" style="margin-top:100px">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col col-sm-12 col-xs-12" style="display: flex; justify-content: space-between; align-items: center;">
+                <h4 class="title">Data List</h4>
+                <a asp-page="/AddChallenges" data-tip="add" style="color:white">
+                    <i class="fa fa-add" style="color:white"></i>Add New Challenge
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel-body table-responsive">
+        <!-- Filtreleme Formu -->
+        <form method="get" asp-page-handler="FilteredChallenges">
+            <div class="row">
+                <div class="col-6">
+<div class="row mb-4" style="">
+                <div class="col-4">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" class="form-control">
+                        <option value="">All</option>
+                        @foreach (var category in Model.AllCategories)
+                        {
+                            <option value="@category">@category</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="period">Period:</label>
+                    <input type="text" id="period" name="period" class="form-control" />
+                </div>
+                <div class="col-3">
+                    <label for="difLevel">Difficulty Level:</label>
+                    <select class="form-control" id="difLevel" name="difLevel">
+                        <option value="">All</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+                <div class="col-1 text-align-end" style="padding-top:1.4rem;">
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+                </div>
+            </div>
+            
+        </form>
+
+        <!-- Sıralama Formu -->
+        <form method="get" asp-page-handler="SortChallenges">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <div>
+                    <label for="sortBy">Sort By:</label>
+                    <select id="sortBy" name="sortBy" onchange="this.form.submit()">
+                        <option value="">Select</option>
+                        <option value="Category">Category</option>
+                        <option value="Difficulty">Difficulty Level</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        @if (Model.ChallengesList != null && Model.ChallengesList.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Period</th>
+                        <th>Difficulty Level</th>
+                        <th>Instruction</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var challenge in Model.ChallengesList)
+                    {
+                        var userReview = Model.UserReviews?.FirstOrDefault(r => r.ChallengeId == challenge.Id);
+
+                        <tr>
+                            <td>@challenge.Category</td>
+                            <td>@challenge.Period</td>
+                            <td>@challenge.DifLevel</td>
+                            <td>@challenge.Instruction</td>
+                            <td>
+                                <!-- Favorilere Ekle Butonu -->
+                                <form method="post" asp-page-handler="ToggleFavorite" asp-route-id="@challenge.Id" style="display:inline;">
+                                    <button type="submit" class="btn btn-link">
+                                        <i class="fa fa-heart" style="color: @(challenge.IsFavorite ? "red" : "grey");"></i>
+                                    </button>
+                                </form>
+
+                                <!-- Puan ve Yorum Ekleme Formu -->
+                                <form method="post" asp-page-handler="AddReview" style="display:inline;">
+                                    <input type="hidden" name="ChallengeId" value="@challenge.Id" />
+                                    <div class="rating">
+                                        <input type="radio" name="Rating" value="5" id="rating-5-@challenge.Id" @(userReview?.Rating == 5 ? "checked" : "") /><label for="rating-5-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="4" id="rating-4-@challenge.Id" @(userReview?.Rating == 4 ? "checked" : "") /><label for="rating-4-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="3" id="rating-3-@challenge.Id" @(userReview?.Rating == 3 ? "checked" : "") /><label for="rating-3-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="2" id="rating-2-@challenge.Id" @(userReview?.Rating == 2 ? "checked" : "") /><label for="rating-2-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="1" id="rating-1-@challenge.Id" @(userReview?.Rating == 1 ? "checked" : "") /><label for="rating-1-@challenge.Id">☆</label>
+                                    </div>
+                                    <input type="text" name="Comment" class="form-control" placeholder="Add a comment" value="@userReview?.Comment" style="display:inline; width:auto;" />
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+                                <!-- View Leaderboard Button -->
+                                <a asp-page="/ViewLeaderBoard" asp-route-category="@challenge.Category" class="btn btn-info">View Leaderboard</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p style="color:white">No challenges available! Start by adding a challenge.</p>
+        }
+    </div>
+</div>
+
+<script src="~/js/ListRoom.js"></script>

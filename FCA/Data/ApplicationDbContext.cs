@@ -9,4 +9,7 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+    public DbSet<Challenges> Challenges { get; set; }
+    public DbSet<Review> Reviews { get; set; }
+    
 }

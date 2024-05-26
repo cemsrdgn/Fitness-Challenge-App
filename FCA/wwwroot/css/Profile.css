@@ -79,3 +79,45 @@ a {
 .challenge-list li strong {
   color: #ed563b;
 }
+
+/* Email ve Şifre Güncelleme Formları */
+.email-update, .password-update {
+  background-color: rgba(36, 41, 60, 0.77);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.email-update h2, .password-update h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.email-update .form-group, .password-update .form-group {
+  margin-bottom: 20px;
+}
+
+.email-update .form-group label, .password-update .form-group label {
+  color: #fff;
+}
+
+.email-update .form-group input, .password-update .form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.email-update button, .password-update button {
+  background-color: #ed563b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.email-update button:hover, .password-update button:hover {
+  background-color: #e72f0e;
+}

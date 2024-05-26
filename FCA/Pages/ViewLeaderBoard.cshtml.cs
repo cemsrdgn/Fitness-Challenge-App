@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FCA.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FCA.Pages
 {
+     [Authorize]
     public class ViewLeaderBoardModel : PageModel
     {
         private readonly ApplicationDbContext _context;

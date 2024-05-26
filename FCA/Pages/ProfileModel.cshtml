@@ -23,6 +23,7 @@
             </form>
         </p>
     </div>
+
     <div class="favorite-challenges">
         <h2>Favorite Challenges</h2>
         @if (Model.FavoriteChallenges != null && Model.FavoriteChallenges.Any())
@@ -40,6 +41,29 @@
         {
             <p>No favorite challenges added yet.</p>
         }
+    </div>
+
+    <div class="email-update">
+        <p>(Need to log in again in case of changes)</p>
+        <h2>Update Email</h2>
+        <form method="post" asp-page-handler="UpdateEmail">
+            <div class="form-group">
+                <label for="email">New Email</label>
+                <input type="email" id="email" name="Email" class="form-control" value="@Model.Email" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Update Email</button>
+        </form>
+    </div>
+
+    <div class="password-update" style="margin-bottom: 30px;">
+        <h2>Update Password</h2>
+        <form method="post" asp-page-handler="UpdatePassword">
+            <div class="form-group">
+                <label for="password">New Password</label>
+                <input type="password" id="password" name="Password" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+        </form>
     </div>
 </main>
 

@@ -1,7 +1,8 @@
 using FCA.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,27 @@ namespace FCA.Pages
 
         public List<Challenges> FavoriteChallenges { get; set; }
 
-        public async Task OnGetAsync()
+        // Geçici kısa biyografi
+        private static string TempBio = "This is a short bio about the user. It gives a brief introduction about their fitness journey and goals.";
+
+        [BindProperty]
+        public string ShortBio { get; set; }
+
+        public void OnGet()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Kullanıcı kimliğini al
-            FavoriteChallenges = await _context.Challenges
-                .Where(c => c.IsFavorite && _context.Reviews.Any(r => r.ChallengeId == c.Id && r.UserId == userId))
-                .ToListAsync();
+            ShortBio = TempBio;
+
+            // Favori zorlukları database'den çek
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            FavoriteChallenges = _context.Challenges
+                .Where(c => c.IsFavorite)
+                .ToList();
+        }
+
+        public IActionResult OnPostUpdateBio()
+        {
+            TempBio = ShortBio;
+            return RedirectToPage();
         }
     }
 }

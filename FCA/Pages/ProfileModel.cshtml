@@ -10,7 +10,18 @@
     <div class="profile-header text-center">
         <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.2082370165.1716422400&semt=ais_user" class="profile-img" alt="Profile Picture">
         <h1>@User.Identity.Name</h1>
-        <p class="short-bio">This is a short bio about the user. It gives a brief introduction about their fitness journey and goals.</p>
+        <p class="short-bio">
+            <span id="bio-text">@Model.ShortBio</span>
+            <span id="bio-edit" style="cursor: pointer;">
+                <i class="fa fa-edit"></i>
+            </span>
+            <form id="bio-form" method="post" asp-page-handler="UpdateBio" style="display: none;">
+                <input type="text" name="ShortBio" value="@Model.ShortBio" class="form-control" />
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check"></i>
+                </button>
+            </form>
+        </p>
     </div>
     <div class="favorite-challenges">
         <h2>Favorite Challenges</h2>
@@ -31,3 +42,11 @@
         }
     </div>
 </main>
+
+<script>
+    document.getElementById('bio-edit').addEventListener('click', function() {
+        document.getElementById('bio-text').style.display = 'none';
+        document.getElementById('bio-edit').style.display = 'none';
+        document.getElementById('bio-form').style.display = 'block';
+    });
+</script>

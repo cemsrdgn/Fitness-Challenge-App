@@ -1,0 +1,147 @@
+/* Genel Stiller */
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: rgba(27, 35, 44, 0.985);
+    color: white;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: #fff;
+  }
+  
+  /* Başlık Stili */
+  .title {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  /* Paragraf Stili */
+  p {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  /* Sekonder Buton Stili */
+  .btn-secondary {
+    background-color: #038722aa;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #05bb2faa;
+  }
+  
+  .btn-primary {
+    background-color: #ed563b;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border-color: #e72f0e;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e72f0e;
+    border-color: #e72f0e;
+  }
+  
+  /* Panel Stili */
+  .panel {
+    background-color: rgba(36, 41, 60, 0.77);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .panel-heading {
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table .table {
+    background-color: #fff;
+  }
+  
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    font-size: 1.5rem;
+    color: #ffdd00;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .rating label:hover,
+  .rating label:hover ~ label,
+  .rating input:checked ~ label {
+    color: #ffc107;
+  }
+  
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 10px;
+    padding-left: 15px;
+  }
+  
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Placeholder metin rengi beyaz */
+  }
+  
+  .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+  }
+  
+  .form-check-label {
+    color: white;
+  }
+  
+  .form-button {
+    margin-top: 20px;
+  }
+  
+  .valid-feedback, .invalid-feedback {
+    text-align: left;
+  }
+  

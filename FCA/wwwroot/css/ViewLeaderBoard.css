@@ -1,0 +1,92 @@
+/* Genel Stiller */
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: rgba(27, 35, 44, 0.985);
+    color: white;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: #fff;
+  }
+  
+  /* Başlık Stili */
+  .title {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  /* Paragraf Stili */
+  p {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  /* Panel Stili */
+  .panel {
+    background-color: rgba(36, 41, 60, 0.77);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+    min-height: 400px;
+    margin: 20px auto;
+  }
+  
+  .panel-heading {
+    margin-bottom: 20px;
+  }
+  
+  .panel-body {
+    padding: 0;
+  }
+  
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+  }
+  
+  .leaderboard-table th, .leaderboard-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .leaderboard-table th {
+    background-color: #ed563b;
+    color: #fff;
+  }
+  
+  .leaderboard-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .leaderboard-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .leaderboard-table td.actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #388e3c;
+  }
+  

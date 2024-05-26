@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\OneDrive\\Masaüstü\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj": {}
+    "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\OneDrive\\Masaüstü\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj": {
+    "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Masaüstü\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj",
+        "projectUniqueName": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj",
         "projectName": "FCA",
-        "projectPath": "C:\\Users\\USER\\OneDrive\\Masaüstü\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\OneDrive\\Masaüstü\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\obj\\",
+        "projectPath": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\FCA.csproj",
+        "packagesPath": "C:\\Users\\cemsr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cemsr\\Desktop\\Ceng382-TermProject\\Fitness-Challenge-App\\FCA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\cemsr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

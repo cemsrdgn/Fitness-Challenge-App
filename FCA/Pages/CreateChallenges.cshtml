@@ -27,60 +27,55 @@
                         <h3 class="mb-4 text-center" style="color:white">Do you want to add a Challenge?</h3>
                         <form class="requires-validation" method="post" novalidate>
                             <div class="col-md-12">
-                                <select class="form-control" style="opacity:0.6;border-radius:15px; height:50px"
-                                    name="ChallengeResult.Category" required>
-                                    <option value="">Select Category</option>
-                                    <option value="Step">Step</option>
-                                    <option value="Squad">Squad</option>
-                                    <option value="Cardio">Cardio</option>
-                                    <option value="Weight Loss">Weight Loss</option>
-                                    <!-- Kendi seçeceğiniz 3 spor kategorisi -->
-                                    <option value="Yoga">Yoga</option>
-                                    <option value="CrossFit">CrossFit</option>
-                                    <option value="Running">Running</option>
-                                </select> <br>
+                                <label for="categoryInput" style="color:white">Category</label>
+                                <input class="form-control" list="categories" id="categoryInput" name="ChallengeResult.Category" placeholder="Select or enter a category" style="opacity:0.6;border-radius:15px; height:50px" required>
+                                <datalist id="categories">
+                                    <option value="Step"></option>
+                                    <option value="Squad"></option>
+                                    <option value="Cardio"></option>
+                                    <option value="Weight Loss"></option>
+                                    <option value="Yoga"></option>
+                                    <option value="CrossFit"></option>
+                                    <option value="Running"></option>
+                                </datalist>
                                 <div class="valid-feedback">Category field is valid!</div>
-                                <div class="invalid-feedback">Please select a category!</div>
+                                <div class="invalid-feedback">Please select or enter a category!</div>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" min="1" max="7"
-                                    style="opacity:0.6;border-radius:15px; height:50px" name="ChallengeResult.Period"
-                                    placeholder="Period (1-7)" required> <br>
+                                <label for="periodInput" style="color:white">Period</label>
+                                <input class="form-control" type="text" style="opacity:0.6;border-radius:15px; height:50px" name="ChallengeResult.Period" id="periodInput" placeholder="Enter period" required>
                                 <div class="valid-feedback">Period field is valid!</div>
-                                <div class="invalid-feedback">Please enter a period between 1 and 7!</div>
+                                <div class="invalid-feedback">Please enter a period!</div>
                             </div>
 
                             <div class="col-md-12">
-                                <select class="form-control" style="opacity:0.6;border-radius:15px; height:50px"
-                                    name="ChallengeResult.DifLevel" required>
+                                <label for="difficultyInput" style="color:white">Difficulty Level</label>
+                                <select class="form-control" style="opacity:0.6;border-radius:15px; height:50px" name="ChallengeResult.DifLevel" id="difficultyInput" required>
                                     <option value="">Select Difficulty Level</option>
-                                    <option value="Low">Low</option>
+                                    <option value="Easy">Easy</option>
                                     <option value="Medium">Medium</option>
-                                    <option value="High">High</option>
-                                </select> <br>
+                                    <option value="Hard">Hard</option>
+                                </select>
                                 <div class="valid-feedback">Difficulty Level field is valid!</div>
                                 <div class="invalid-feedback">Please select a difficulty level!</div>
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" style="opacity:0.6;border-radius:15px;"
-                                    name="ChallengeResult.Instruction" placeholder="Instruction" required></textarea>
-                                <br>
+                                <label for="instructionInput" style="color:white">Instruction</label>
+                                <textarea class="form-control" style="opacity:0.6;border-radius:15px;" name="ChallengeResult.Instruction" id="instructionInput" placeholder="Instruction" required></textarea>
                                 <div class="valid-feedback">Instruction field is valid!</div>
                                 <div class="invalid-feedback">Instruction field cannot be blank!</div>
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                <label class="form-check-label">Data is Correct</label>
-                                <div class="invalid-feedback">Please confirm that the entered data are all correct!
-                                </div>
+                                <label class="form-check-label" style="color:white">Data is Correct</label>
+                                <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
                             </div>
 
                             <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary"
-                                    style="background-color:green; color:black">Add Challenge</button>
+                                <button id="submit" type="submit" class="btn btn-primary" style="background-color:green; color:black">Add Challenge</button>
                             </div>
                         </form>
                     </div>
@@ -92,11 +87,7 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387"
-        integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ=="
-        data-cf-beacon='{"rayId":"883352afb86170ce","version":"2024.4.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-        crossorigin="anonymous"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387" integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ==" data-cf-beacon='{"rayId":"883352afb86170ce","version":"2024.4.1","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
 </body>
 
 </html>

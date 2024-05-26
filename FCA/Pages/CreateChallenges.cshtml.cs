@@ -6,69 +6,65 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FCA.Pages;
-
-public class CreateChallengesModel : PageModel
+namespace FCA.Pages
 {
-    private readonly ApplicationDbContext _context;
-
-    public CreateChallengesModel(ApplicationDbContext context)
+    public class CreateChallengesModel : PageModel
     {
-        _context = context;
-    }
+        private readonly ApplicationDbContext _context;
 
-    [BindProperty]
-    public Challenges? ChallengeResult { get; set; }
-
-    public async Task<IActionResult> OnPostAsync()
-    {
-        if (ModelState.IsValid)
+        public CreateChallengesModel(ApplicationDbContext context)
         {
-            _context.Challenges.Add(ChallengeResult);
-            await _context.SaveChangesAsync();
-            Console.WriteLine($"{ChallengeResult.Category} {ChallengeResult.Period} {ChallengeResult.DifLevel} has been added successfully!");
-            return RedirectToPage("./ListChallenges", new { success = true });
-        }
-        else
-        {
-            Console.WriteLine("Challenge cannot be added to DB!");
-            return RedirectToPage("./Index", new { success = false });
-        }
-    }
-
-    // Filtreleme işlemleri için yeni metot
-    public IActionResult OnGetFilteredChallenges(string? keywords, string? category, int? period, string? difLevel)
-    {
-        var query = _context.Challenges.AsQueryable();
-
-        if (!string.IsNullOrEmpty(keywords))
-        {
-            // Anahtar kelimelerle ilgili arama
-            query = query.Where(c =>
-                c.Category.Contains(keywords) ||
-                c.Period.Contains(keywords) ||
-                c.DifLevel.Contains(keywords));
+            _context = context;
         }
 
-        if (!string.IsNullOrEmpty(category))
+        [BindProperty]
+        public Challenges? ChallengeResult { get; set; }
+
+        public async Task<IActionResult> OnPostAsync()
         {
-            // Kategoriye göre filtreleme
-            query = query.Where(c => c.Category.Contains(category));
+            if (ModelState.IsValid)
+            {
+                _context.Challenges.Add(ChallengeResult);
+                await _context.SaveChangesAsync();
+                Console.WriteLine($"{ChallengeResult.Category} {ChallengeResult.Period} {ChallengeResult.DifLevel} has been added successfully!");
+                return RedirectToPage("./ListChallenges", new { success = true });
+            }
+            else
+            {
+                Console.WriteLine("Challenge cannot be added to DB!");
+                return RedirectToPage("./Index", new { success = false });
+            }
         }
 
-        if (period.HasValue)
+        public IActionResult OnGetFilteredChallenges(string? keywords, string? category, string? period, string? difLevel)
         {
-            // Döneme göre filtreleme
-            query = query.Where(c => c.Period == period.Value.ToString());
-        }
+            var query = _context.Challenges.AsQueryable();
 
-        if (!string.IsNullOrEmpty(difLevel))
-        {
-            // Zorluk seviyesine göre filtreleme
-            query = query.Where(c => c.DifLevel.Contains(difLevel));
-        }
+            if (!string.IsNullOrEmpty(keywords))
+            {
+                query = query.Where(c =>
+                    c.Category.Contains(keywords) ||
+                    c.Period.Contains(keywords) ||
+                    c.DifLevel.Contains(keywords));
+            }
 
-        var filteredChallenges = query.ToList();
-        return new JsonResult(filteredChallenges);
+            if (!string.IsNullOrEmpty(category))
+            {
+                query = query.Where(c => c.Category.Contains(category));
+            }
+
+            if (!string.IsNullOrEmpty(period))
+            {
+                query = query.Where(c => c.Period.Contains(period));
+            }
+
+            if (!string.IsNullOrEmpty(difLevel))
+            {
+                query = query.Where(c => c.DifLevel.Contains(difLevel));
+            }
+
+            var filteredChallenges = query.ToList();
+            return new JsonResult(filteredChallenges);
+        }
     }
 }

@@ -1,0 +1,104 @@
+﻿@page "{category?}"
+@model FCA.Pages.ViewLeaderBoardModel
+@{
+    ViewData["Title"] = "LeaderBoard";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/ListRoom.css">
+<style>
+    body {
+        background-color: #f0f4f8;
+        font-family: Arial, sans-serif;
+    }
+    .panel {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+    }
+    .panel-heading {
+        margin-bottom: 20px;
+    }
+    .panel-heading .title {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+    }
+    .panel-body {
+        padding: 0;
+    }
+    .leaderboard-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .leaderboard-table th, .leaderboard-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    .leaderboard-table th {
+        background-color: #ff5722;
+        color: #fff;
+    }
+    .leaderboard-table tr:hover {
+        background-color: #f1f1f1;
+    }
+    .leaderboard-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .leaderboard-table td.actions {
+        display: flex;
+        gap: 10px;
+    }
+    .btn-primary {
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .btn-primary:hover {
+        background-color: #388e3c;
+    }
+</style>
+
+<div class="panel">
+    <div class="panel-heading">
+        <h4 class="title">LeaderBoard - @(string.IsNullOrEmpty(Model.Category) ? "All Challenges" : $"{Model.Category} Category")</h4>
+    </div>
+    <div class="panel-body">
+        @if (Model.Challenges != null && Model.Challenges.Any())
+        {
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Instruction</th>
+                        <th>Category</th>
+                        <th>Period</th>
+                        <th>Difficulty Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var challenge in Model.Challenges)
+                    {
+                        <tr>
+                            <td>@challenge.Instruction</td>
+                            <td>@challenge.Category</td>
+                            <td>@challenge.Period</td>
+                            <td>@challenge.DifLevel</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p style="text-align: center; color: #333;">No challenges available @(string.IsNullOrEmpty(Model.Category) ? "." : $"for the {Model.Category} category.").</p>
+        }
+    </div>
+</div>

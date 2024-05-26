@@ -5,7 +5,10 @@
 }
 
 <link rel="stylesheet" href="../css/ListRoom.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/font-awesome.min.css">
+<style>
+    /* Eklediğiniz CSS stilini buraya ekleyin */
+</style>
 
 <div class="panel">
     <div class="panel-heading">
@@ -25,7 +28,13 @@
             <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                 <div>
                     <label for="category">Category:</label>
-                    <input type="text" id="category" name="category" />
+                    <select id="category" name="category">
+                        <option value="">All</option>
+                        @foreach (var category in Model.AllCategories)
+                        {
+                            <option value="@category">@category</option>
+                        }
+                    </select>
                 </div>
                 <div>
                     <label for="period">Period:</label>
@@ -33,7 +42,12 @@
                 </div>
                 <div>
                     <label for="difLevel">Difficulty Level:</label>
-                    <input type="text" id="difLevel" name="difLevel" />
+                    <select id="difLevel" name="difLevel">
+                        <option value="">All</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
                 </div>
                 <div style="align-self: flex-end;">
                     <button type="submit" class="btn btn-primary">Filter</button>
@@ -46,13 +60,11 @@
             <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                 <div>
                     <label for="sortBy">Sort By:</label>
-                    <select id="sortBy" name="sortBy">
+                    <select id="sortBy" name="sortBy" onchange="this.form.submit()">
+                        <option value="">Select</option>
                         <option value="Category">Category</option>
                         <option value="Difficulty">Difficulty Level</option>
                     </select>
-                </div>
-                <div style="align-self: flex-end;">
-                    <button type="submit" class="btn btn-primary">Sort</button>
                 </div>
             </div>
         </form>
@@ -72,6 +84,8 @@
                 <tbody>
                     @foreach (var challenge in Model.ChallengesList)
                     {
+                        var userReview = Model.UserReviews?.FirstOrDefault(r => r.ChallengeId == challenge.Id);
+
                         <tr>
                             <td>@challenge.Category</td>
                             <td>@challenge.Period</td>
@@ -88,15 +102,19 @@
                                 <!-- Puan ve Yorum Ekleme Formu -->
                                 <form method="post" asp-page-handler="AddReview" style="display:inline;">
                                     <input type="hidden" name="ChallengeId" value="@challenge.Id" />
-                                    <select name="Rating" class="form-control" style="display:inline; width:auto;">
-                                        @for (int i = 1; i <= 10; i++)
-                                        {
-                                            <option value="@i">@i</option>
-                                        }
-                                    </select>
-                                    <input type="text" name="Comment" class="form-control" placeholder="Add a comment" style="display:inline; width:auto;" />
+                                    <div class="rating">
+                                        <input type="radio" name="Rating" value="5" id="rating-5-@challenge.Id" @(userReview?.Rating == 5 ? "checked" : "") /><label for="rating-5-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="4" id="rating-4-@challenge.Id" @(userReview?.Rating == 4 ? "checked" : "") /><label for="rating-4-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="3" id="rating-3-@challenge.Id" @(userReview?.Rating == 3 ? "checked" : "") /><label for="rating-3-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="2" id="rating-2-@challenge.Id" @(userReview?.Rating == 2 ? "checked" : "") /><label for="rating-2-@challenge.Id">☆</label>
+                                        <input type="radio" name="Rating" value="1" id="rating-1-@challenge.Id" @(userReview?.Rating == 1 ? "checked" : "") /><label for="rating-1-@challenge.Id">☆</label>
+                                    </div>
+                                    <input type="text" name="Comment" class="form-control" placeholder="Add a comment" value="@userReview?.Comment" style="display:inline; width:auto;" />
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
+
+                                <!-- View Leaderboard Button -->
+                                <a asp-page="/ViewLeaderBoard" asp-route-category="@challenge.Category" class="btn btn-info">View Leaderboard</a>
                             </td>
                         </tr>
                     }

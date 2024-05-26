@@ -1,69 +1,43 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
-
-
-a {
-    text-decoration: none !important;
-    color: #fff;  /* Link rengini beyaz yaptık */
-}
-/* 
----------------------------------------------
-header
---------------------------------------------- 
-*/
-.header-area {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 100;
-    height: 80px;
-    background-color: rgba(36, 41, 60, 0.77); 
-    -webkit-transition: all .5s ease 0s;
-    -moz-transition: all .5s ease 0s;
-    -o-transition: all .5s ease 0s;
-    transition: all .5s ease 0s;
+.center{
+    margin-top:225px ; 
+    margin-left: 37.5%;
 }
 
-.header-area .main-nav {
-    min-height: 80px;
-    background: transparent;
-}
-
-.header-area .main-nav .logo {
-    line-height: 80px;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 800;
-    text-transform: uppercase;
-    float: left;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-}
-
-.logo em {
+.em{
     font-style: normal;
     color: #ed563b;
     font-weight: 900;
 }
 
+.em a {
+    color: white; /* "in" kelimesinin rengi beyaz */
+ 
+}
 
-/* 
----------------------------------------------
-footer
---------------------------------------------- 
-*/
-.footer1 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 40px;
-    background-color: rgba(36, 41, 60, 0.77); 
-    border: none; 
-    color: white;
+.loginForm{
+
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(27, 35, 44, 0.564);
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.loginButton {
+    font-size: 15px;
+    background-color: #038722aa;
+    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 1000;
+    border-radius: 15px;
+    line-height: 1.5;
+    width: 100%;
+    height: 50px;
+    border: #fff;
+    margin-bottom: 30px;
+}
+
+.loginButton:hover {
+    background-color: #05bb2faa;
 }

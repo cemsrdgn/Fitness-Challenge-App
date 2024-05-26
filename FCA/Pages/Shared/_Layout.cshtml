@@ -7,21 +7,54 @@
     <title>@ViewData["Title"] - FCA</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/FCA.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 </head>
 
-<body>
-    <header class="header-area">
+<header class="header-area">
+    <nav class="navbar navbar-expand-sm a">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <a href="/Welcome" class="logo">Fitness<em> Challenge</em></a>
-                    </nav>
-                </div>
+            <a href="/HomePage" class="logo">Fitness<em>Challenge</em></a>
+            <div class="navbar-collapse  ">
+                <ul class="navbar-nav  b">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a class="nav-link text-white" style="margin-left: 30px;" asp-area=""
+                                asp-page="/HomePage">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white " asp-area="" asp-page="/Challenges">Challenges</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white" asp-area="" asp-page="/LeaderBoard">Leader Board</a>
+                        </li>
+                        <li class="nav-item profile">
+                                <a class="nav-link text-white" href="/Profile">
+                                    <i class="fas fa-user "></i>
+                                </a>
+                            </li>
+                         <li>
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                                    <button type="submit" class="nav-link btn btn-link text-white logout">Logout</button>
+                                </form>
+                            </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
+</header>
 
+<body>
     <!-- Main Content -->
     <main role="main" class="container">
         @RenderBody()

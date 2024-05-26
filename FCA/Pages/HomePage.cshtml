@@ -4,37 +4,40 @@
     ViewData["Title"] = "Home page";
 }
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Hello, </h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+<link rel="stylesheet" href="~/css/HomePage.css">
+
+<main role="main" class="container" style="margin-top: 130px;">
+    <div class="welcome-message">
+        <h1><strong>Welcome, @User.Identity.Name!</strong></h1>
+        <p style="font-size:20px">Explore the features below to get started with your fitness journey.</p>
+    </div> <br/>
+    <div class="row">
+        <div class="col-md-4 content-block">
+            <img src="https://assets-global.website-files.com/63695e3c58fff2340c868780/6378b4d64ada241dd5924154_615ecb2b41055ad183557715_Challenge-min.jpeg" class="img-fluid" alt="Challenges">
+            <div class="content-details">
+                <h2><strong>Challenges</strong></h2>
+                <p style="margin-bottom:55px">Participate in various fitness challenges to stay motivated and achieve your goals.</p>
+                <div class="btn-group">
+                    <a class="btn btn-secondary" href="/Challenges" role="button" style="width:180px ; margin-left:-40px">Create Challenge &raquo;</a>
+                    <a class="btn btn-primary" href="/Challenges" role="button" style="width:180px; margin-left:25px">View Challenges &raquo;</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
+        <div class="col-md-4 content-block">
+            <img src="https://i.fbcd.co/products/original/cb7e51babba3596dbdf8d170e84cc4876369324e4913a61b7e7ba9f964cdb6a4.jpg" class="img-fluid" alt="Leader Board">
+            <div class="content-details">
+                <h2><strong>Leader Board</strong></h2>
+                <p style="margin-bottom:25px">Check out the top performers and compete to see your name on the leader board.</p>
+                <a class="btn btn-secondary" href="/LeaderBoard" role="button">View Leader Board &raquo;</a>
+            </div>
         </div>
-
-        <hr>
-
-      </div> <!-- /container -->
-
-  
+        <div class="col-md-4 content-block">
+            <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.2082370165.1716422400&semt=ais_user" class="img-fluid" alt="Profile">
+            <div class="content-details">
+                <h2><strong>Profile</strong></h2>
+                <p style="margin-bottom:55px">View and update your profile to track your fitness progress and achievements.</p>
+                <a class="btn btn-secondary" href="/Profile" role="button">View Profile &raquo;</a>
+            </div>
+        </div>
+    </div>
+</main>

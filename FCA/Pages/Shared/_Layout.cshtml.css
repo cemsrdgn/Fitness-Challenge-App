@@ -3,8 +3,7 @@
     color: #fff;
     font-size: 35px;
     margin-bottom: 10px;
-    margin-top: 15px;
-    
+    margin-top: 12px;
 }
 
 b {
@@ -12,21 +11,20 @@ b {
     margin-top: 100px;
     padding-top: 100px;
 }
- 
+
 li {
     font-size: 20px;
-    padding-left: 10px;
+    padding-left: 5px;
     margin-top: 10px;
 }
 
-.profile{
+.profile {
     margin-left: 450px;
     height: 1px;
-    margin-top:-20px;
-    
+    margin-top: -20px;
 }
 
-.logout{
+.logout {
     font-size: 20px;
     font-weight: bold;
 }
@@ -83,6 +81,9 @@ header
     font-weight: 900;
 }
 
+.navbar-nav .dropdown-toggle {
+    margin-top: 5px;
+}
 
 /* 
 ---------------------------------------------
@@ -90,7 +91,7 @@ footer
 --------------------------------------------- 
 */
 .footer1 {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
@@ -101,4 +102,25 @@ footer
     text-align: center;
     padding: 10px 0;
     font-size: 18px;
+}
+
+/* Dropdown Menu Stilleri */
+.navbar-nav .dropdown-menu {
+    background-color: rgba(36, 41, 60, 0.85);
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #ed563b;
+    color: #fff;
+}
+
+.dropdown{
+    margin-top: 6px;
 }

@@ -1,6 +1,117 @@
-/* Move down content because we have a fixed navbar that is 3.5rem tall */
-body {
-    padding-top: 3.5rem;
+/* Genel Stiller */
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: rgba(27, 35, 44, 0.985);
+  color: white;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none !important;
+  color: #fff;
+}
+
+/* Başlık Stili */
+h2 {
+  color: #fff;
+}
+
+/* Paragraf Stili */
+p {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Sekonder Buton Stili */
+.btn-secondary {
+background-color: #038722aa;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+background-color: #05bb2faa;
+}
+
+.btn-primary {
+background-color: #ed563b;
+color: white;
+border-radius: 5px;
+padding: 10px 20px;
+border-color: #e72f0e;
+}
+
+.btn-primary:hover {
+background-color: #e72f0e;
+border-color: #e72f0e;
+}
+
+/* İçerik Blokları Stili */
+.content-block {
+  display: flexbox;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 35px;
+  padding-left: 65px;
+  background-color: rgba(36, 41, 60, 0.77);
+  border-radius: 10px;
+  height: 550px;
+  width: 435px;
+  box-sizing: border-box;
+  margin-inline-start: 5px;  
+}
+
+.content-block img {
+  width: 300px;
+  max-width: 400px;
+  height: 250px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+
+}
+
+.content-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .content-block {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 20px;
   }
-  
+
+  .content-block img {
+      margin-right: 20px;
+      margin-bottom: 0;
+  }
+
+  .content-details {
+      align-items: flex-start;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+p{
+font-size: 18px;
+font-style: italic;
+}
 

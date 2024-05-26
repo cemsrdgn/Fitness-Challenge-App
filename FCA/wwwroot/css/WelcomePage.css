@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-html,
-body {
+html, body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background-color: #fff;
@@ -14,11 +13,14 @@ body {
 a {
     text-decoration: none !important;
 }
-/* 
----------------------------------------------
-global styles
---------------------------------------------- 
-*/
+
+/* Welcome Screen için Login ve Register butonlarını gizle */
+.header-area .navbar-nav .nav-item .nav-link[href*='/Account/Login'],
+.header-area .navbar-nav .nav-item .nav-link[href*='/Account/Register'] {
+    display: none;
+}
+
+/* global styles */
 .main-button a {
     display: inline-block;
     font-size: 15px;
@@ -56,14 +58,10 @@ global styles
 }
 
 .secondary-button a:hover {
-    background-color:  #e72f0e;
+    background-color: #e72f0e;
 }
 
-/* 
----------------------------------------------
-header
---------------------------------------------- 
-*/
+/* header */
 .header-area {
     position: absolute;
     top: 0px;
@@ -115,26 +113,16 @@ header
     z-index: 999;
 }
 
-
-/* 
----------------------------------------------
-banner
---------------------------------------------- 
-*/
-
+/* banner */
 .main-banner {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    /* Sayfanın tamamını kaplamak için yüksekliği ayarlıyoruz */
     background-color: black;
-    /* Siyah arka plan */
     color: white;
-    /* Beyaz yazı rengi */
     text-align: center;
-    /* Ortalanmış yazılar */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,21 +170,18 @@ banner
     color: #ed563b;
     font-weight: 900;
 }
-/* 
----------------------------------------------
-footer
---------------------------------------------- 
-*/
+
+/* footer */
 .footer1 {
     position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
     line-height: 40px;
-    background-color: rgba(250, 250, 250, 0.06);
-    border: none; 
+    background-color: rgba(250, 250, 250, 0.1);
+    border: none;
     color: white;
     text-align: center;
     padding: 10px 0;
     font-size: 18px;
-  }
+}
